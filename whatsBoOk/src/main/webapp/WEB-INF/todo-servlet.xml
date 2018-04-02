@@ -1,0 +1,55 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:component-scan base-package="com.in28minutes" />
+
+    <mvc:annotation-driven/>
+    
+  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/WEB-INF/views/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean> 
+    <bean id="myds"  class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver"/>
+		 <property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:xe"/> 
+		<property name="user" value="whatsBoOk"/>
+		<property name="password" value="abc123"/>
+		
+		<!-- connection properties for c3po -->
+		<property name="minPoolSize" value="3"/>
+		<property name="maxPoolSize" value="20"/>
+		<property name="acquireIncrement" value="5"/>
+		<property name="testConnectionOnCheckin" value="true"/>
+		<property name="idleConnectionTestPeriod" value="300"/>
+		<property name="maxIdleTimeExcessConnections" value="240"/>
+	</bean>
+
+	<bean id="mySesFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="myds"/>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+			<prop key="show_sql">true</prop>
+			</props>
+		</property>
+		<property name="packagesToScan" value="com.in28minutes.user"/>
+	</bean>
+
+<bean id="myTransactionManager"  class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="mySesFactory"/>
+	</bean>
+<tx:annotation-driven transaction-manager="myTransactionManager"/>
+   
+    <mvc:resources mapping="/resources/**" location="/resources/"/>    
+</beans>

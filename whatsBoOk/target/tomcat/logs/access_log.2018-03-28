@@ -1,0 +1,13 @@
+0:0:0:0:0:0:0:1 - - [28/Mar/2018:15:33:56 +0530] "GET / HTTP/1.1" 404 951 http-bio-8080-exec-1 558
+0:0:0:0:0:0:0:1 - - [28/Mar/2018:15:33:59 +0530] "GET /whatsBoOk/ HTTP/1.1" 200 1798 http-bio-8080-exec-3 1314
+0:0:0:0:0:0:0:1 - - [28/Mar/2018:15:34:00 +0530] "GET /whatsBoOk/register HTTP/1.1" 200 2426 http-bio-8080-exec-4 324
+0:0:0:0:0:0:0:1 - - [28/Mar/2018:15:34:02 +0530] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-5 1
+0:0:0:0:0:0:0:1 - - [28/Mar/2018:15:34:17 +0530] "POST /whatsBoOk/register HTTP/1.1" 500 4142 http-bio-8080-exec-7 148
+0:0:0:0:0:0:0:1 - - [28/Mar/2018:15:35:53 +0530] "POST /whatsBoOk/register HTTP/1.1" 200 682 http-bio-8080-exec-8 389
+0:0:0:0:0:0:0:1 - - [28/Mar/2018:15:37:16 +0530] "GET /whatsBoOk/register HTTP/1.1" 200 2426 http-bio-8080-exec-10 69
+0:0:0:0:0:0:0:1 - - [28/Mar/2018:15:37:20 +0530] "GET /whatsBoOk/register HTTP/1.1" 200 2426 http-bio-8080-exec-4 4
+0:0:0:0:0:0:0:1 - - [28/Mar/2018:15:37:33 +0530] "POST /whatsBoOk/register HTTP/1.1" 200 682 http-bio-8080-exec-8 284
+0:0:0:0:0:0:0:1 - - [28/Mar/2018:15:41:14 +0530] "POST /whatsBoOk/register HTTP/1.1" 500 3793 http-bio-8080-exec-3 32
+0:0:0:0:0:0:0:1 - - [28/Mar/2018:15:42:44 +0530] "POST /whatsBoOk/register HTTP/1.1" 500 3793 http-bio-8080-exec-1 46
+0:0:0:0:0:0:0:1 - - [28/Mar/2018:15:42:46 +0530] "POST /whatsBoOk/register HTTP/1.1" 500 3793 http-bio-8080-exec-2 18
+0:0:0:0:0:0:0:1 - - [28/Mar/2018:15:44:01 +0530] "POST /whatsBoOk/register HTTP/1.1" 200 682 http-bio-8080-exec-1 501

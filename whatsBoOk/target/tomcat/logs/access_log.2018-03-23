@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [23/Mar/2018:14:41:08 +0530] "GET /spring-mvc/list-todos HTTP/1.1" 404 993 http-bio-8080-exec-1 211
+0:0:0:0:0:0:0:1 - - [23/Mar/2018:14:41:12 +0530] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-5 1
